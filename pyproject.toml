@@ -1,0 +1,40 @@
+[build-system]
+requires = [
+    "setuptools>=61",
+    "pybind11>=2.10.0",
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "py-gperftools"
+dynamic = ["version"]
+
+dependencies = [
+]
+
+authors = [
+  { name="Ben Parks", email="bnprks+github@gmail.com" },
+]
+description = "gperftools bindings in Python"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/bnprks/py-gperftools"
+"Bug Tracker" = "https://github.com/bnprks/py-gperftools/issues"
+
+[project.optional-dependencies]
+test = [
+    'pytest',
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]

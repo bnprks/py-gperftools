@@ -4,20 +4,18 @@ on: [push, pull_request]
 
 jobs:
   build_wheels:
-    name: Build wheels on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, windows-2019, macos-11]
+    name: Build wheels on Linux
+    runs-on: ubuntu-22.04
 
     steps:
       - uses: actions/checkout@v3
 
       - name: Build wheels
         uses: pypa/cibuildwheel@v2.14.1
-        # env:
-        #   CIBW_SOME_OPTION: value
-        #    ...
+        env:
+          CIBW_BEFORE_ALL_LINUX: yum install -y gperftools-devel
+          CIBW_ARCHS: auto64
+          CIBW_SKIP: "*-musllinux_* pp*"
         # with:
         #   package-dir: .
         #   output-dir: wheelhouse

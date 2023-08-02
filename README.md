@@ -36,7 +36,7 @@ install an editable version of your package from your source directory
 
 ## Pre-built wheels
 
-1. Go to the [latest release](https://github.com/bnprks/BPCells/releases/tag/v0.1.0) and identify the `.whl` file URL for the
+1. Go to the [latest release](https://github.com/bnprks/py-gperftools/releases/latest) and identify the `.whl` file URL for the
    for your version of python (e.g. use the one with `cp39` for Python 3.9).
 2. Run `pip install <URL_OF_WHL_FILE>`
 
